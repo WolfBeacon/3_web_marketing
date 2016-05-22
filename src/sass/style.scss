@@ -1,0 +1,295 @@
+@charset "UTF-8";
+
+// Vendor
+// ---------------------------------
+@import "vendor/normalize";
+
+// Components
+// ---------------------------------
+@import "components/variables";
+@import "components/responsive";
+@import "components/global";
+
+// Sections
+// ---------------------------------
+
+
+// Navbar
+// ---------------------------------
+header{
+	width: 100%;
+	background-color: red;
+	display: block;
+	position: fixed;
+	z-index: 9999;
+
+	.container{
+		padding: 0px;
+		.logo{
+			border: 1px solid black;
+			display: inline-block;
+			padding: 20px 40px;
+			margin-top: 5px;
+			float: left;
+		}
+		.nav-menu{
+			display: inline-block;
+			float: right;
+			padding:0;
+
+			li{
+				display: inline-block;
+				padding: 10px 20px;
+			}
+		}
+	}
+}
+
+// Landing
+// ---------------------------------
+
+section.landing{
+	background-color: $yellow;
+	padding: 150px 0px 70px 0px;
+	.container{
+		.row{
+			.landing-left{
+				.main-img{
+					height: 250px;
+					margin: 20px;
+					width: calc(100% - 40px);
+					background: black;
+				}
+
+				.coming-soon{
+					text-align: center;
+					font-size: 1.2rem;
+					font-style: $font-italic;
+					font-weight: $font-light;
+					padding-bottom: 20px;
+					.cs-store{
+						margin: 0 auto;
+						.store-icn{
+							background: grey;
+							display: inline-block;
+							width: 100px;
+							height: 40px;
+							margin: 0 4px;
+							border-radius: 10px;
+							@include breakpoint(tablet) {
+							    margin: 0 6px;
+							}
+						}
+					}
+				}
+			}
+
+			.landing-right{
+				text-align: center;
+				padding-bottom: 0px; 
+				@include breakpoint(tablet) {
+				    padding-bottom: 60px; // Offset from the center, to align more with the image
+				}
+				.text-desc{
+					text-align: center;
+					padding: 40px 0px;
+					font-size: 1.6rem;
+					font-weight: $font-light;
+
+					p{
+						max-width: 550px;
+						margin: 0 auto;
+					}
+				}
+
+				.subscribe{
+					form{
+
+						input{
+							padding: 8px 10px;
+							min-width: 150px;
+							width: calc(60% - 100px);
+							border-radius: 2px;
+							border: 1px solid red;
+						}
+
+						button{
+							border-radius: 3px;
+							border:1px solid transparent;
+							width: calc(40% - 100px);
+							min-width: 128px;
+							white-space: nowrap;
+							min-width: 120px;
+						}
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+// Features
+// ---------------------------------
+section.features{
+	background: white;
+	.section-title{
+		padding-bottom: 30px;
+	}
+
+	.row{
+		padding: 15px 0;
+		.fe-img{
+			@include breakpoint(tablet) {
+			    max-width: 350px;
+			}
+			.fe-icon{
+				@include aspect-ratio(1,1);
+				max-width: 250px;
+				background: grey;
+				margin: 0 auto;
+			}
+		}
+
+		.fe-text{
+			max-width: 450px;
+			text-align: center;
+			margin: 0 auto;
+			@include breakpoint(tablet) {
+			    max-width: 550px;
+			    text-align: left;
+			    margin: 0;
+			}
+			padding: 30px 0;
+			.fe-title{
+				font-size: 1.4rem;
+				font-weight: $font-bold;
+				padding-bottom: 20px;
+			}
+
+		}
+	}
+
+	.row-alt{
+		justify-content: flex-end;
+		.fe-img{
+			order: 1;
+			@include breakpoint(tablet) {
+			    order: 2;
+			}
+		}
+		.fe-text{
+			order: 2;
+			text-align: center;
+			@include breakpoint(tablet) {
+			    order: 1;
+			    text-align: right;
+			}
+		}
+	}
+}
+
+// About
+// ---------------------------------
+section.about{
+	background: $yellow;
+	.container{
+		.about-text{
+			text-align: center;
+			font-size: 1.6rem;
+			padding: 20px 10px 40px;
+			@include breakpoint(tablet) {
+			    padding: 40px;
+			}
+		}
+
+		.stats-container{
+			height: 200px;
+			display: flex;
+			align-items: center;
+			color: $red;
+			
+			.people-cnt, .country-cnt{
+				display: flex-box;
+				width: 35%;
+				font-size: 1.5rem;
+				@include breakpoint(tablet) {
+				    width: 42%;
+				}
+				div{
+					max-width: 100px;
+					text-align: center;
+					float: right;
+					strong{
+						font-size: 5rem;
+						font-weight: $font-bold;
+					}
+				}
+			}
+
+			.from{
+				display: flex-box;
+				width: 30%;
+				text-align: center;
+				font-size: 1.3rem;
+				font-weight: $font-bold;
+				@include breakpoint(tablet) {
+				    width: 16%;
+				}
+			}
+
+			.country-cnt{
+				div{
+					float: left;
+				}
+			}
+		}
+
+		.social-media{
+			padding: 40px 0;
+			h3{
+				font-size: 1.5rem;
+				font-style: $font-italic;
+				font-weight: $font-light;
+				text-align: center;
+			}
+
+			.social-cnt{
+				display: block;
+				margin: 0 auto;
+				text-align: center;
+				padding:0;
+				white-space: nowrap;
+				overflow: hidden;
+				.sm-icon{
+					display: inline-block;
+					background: red;
+					padding: 0;
+					margin: 0 8px;
+					height: 32px;
+					width: 32px;
+					@include breakpoint(tablet) {
+					    height: 64px;
+					    width: 64px;
+					    margin: 0 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
