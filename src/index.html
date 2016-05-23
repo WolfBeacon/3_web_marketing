@@ -3,6 +3,7 @@
 <head>
 	@@include('src/html/_meta.html')
 	<link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 <body>
 	@@include('src/html/_nav.html')
@@ -10,5 +11,30 @@
 	@@include('src/html/_features.html')
 	@@include('src/html/_about.html')
 	@@include('src/html/_footer.html')
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+	<script type="text/javascript">
+		var $root = $('html, body');
+		function scrollTo() {
+			$('a[href^="#"]:not([href="#"])').on('click',function (e) {
+			    e.preventDefault();
+			    var $target = $(this.hash);
+			    var hash = this.hash;
+			    $root.stop().animate({
+			        scrollTop: $target.offset().top - 70
+			    }, 900, 'swing', function(){location.hash = hash;});
+			})
+			return false;
+		}
+
+		function backToTop(e) {
+			event.preventDefault();
+		    $root.animate({
+		        scrollTop: 0
+		    }, 900, 'swing', function(){location.hash = "#";});
+		    return false;
+		}
+	</script>
 </body>
 </html>

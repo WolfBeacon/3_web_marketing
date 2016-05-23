@@ -66,18 +66,20 @@ section.landing{
 					font-size: 1.2rem;
 					font-style: $font-italic;
 					font-weight: $font-light;
-					padding-bottom: 20px;
+					padding: 40px 0 20px;
 					.cs-store{
 						margin: 0 auto;
 						.store-icn{
-							background: grey;
 							display: inline-block;
-							width: 100px;
-							height: 40px;
-							margin: 0 4px;
-							border-radius: 10px;
+							margin: 0 10px;
+							max-width: 64px;
+							max-height: 64px;
 							@include breakpoint(tablet) {
-							    margin: 0 6px;
+							    margin: 0 15px;
+							}
+
+							img{
+								width: 100%;
 							}
 						}
 					}
@@ -145,10 +147,10 @@ section.features{
 			    max-width: 350px;
 			}
 			.fe-icon{
-				@include aspect-ratio(1,1);
 				max-width: 250px;
-				background: grey;
 				margin: 0 auto;
+
+				img{width: 100%;}
 			}
 		}
 
@@ -269,6 +271,7 @@ section.about{
 					margin: 0 8px;
 					height: 32px;
 					width: 32px;
+					border-radius: 50%;
 					@include breakpoint(tablet) {
 					    height: 64px;
 					    width: 64px;
